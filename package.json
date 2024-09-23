@@ -1,0 +1,37 @@
+{
+  "name": "namecheap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:esm": "npx esbuild src/index.ts --platform=node --target=node14,es2021 --format=esm --bundle --keep-names --tsconfig=tsconfig.json --outfile=\"dist/esm/index.js\" --minify",
+    "build:cjs": "npx esbuild src/index.ts --platform=node --target=node14,es2021 --format=cjs --bundle --keep-names --tsconfig=tsconfig.json --outfile=\"dist/cjs/index.js\" --minify",
+    "test": "jest -i",
+    "format": "npx prettier src tests --write",
+    "lint": "eslint \"src/**/*.ts\" --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.0",
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.16",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "esbuild": "^0.19.11",
+    "eslint": "^8.56.0",
+    "eslint-config-xo": "^0.43.1",
+    "eslint-config-xo-typescript": "^1.0.1",
+    "jest": "^29.7.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.3.4"
+  }
+}
